@@ -11,7 +11,7 @@ const saveFavoriteSongs = (favoriteSongs) => localStorage
   .setItem(FAVORITE_SONGS_KEY, JSON.stringify(favoriteSongs));
 
 // --------------------------------------------------------------------
-// A função simulateRequest simula uma requisição para uma API externa
+// A função simulateRequest simula uma requisição para uma API externaa
 // Esse tipo de função que "chama outra função" é chamada de
 // "currying function" https://javascript.info/currying-partials
 // não se preocupe, estudaremos isso futuramente.
