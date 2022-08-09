@@ -1,9 +1,71 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { Redirect } from 'react-router-dom';
+import { createUser } from '../services/userAPI';
+import Loading from './Loading';
 
-class Login extends Component {
+class Login extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      button: true,
+      name: '',
+      loading: false,
+      carregado: false,
+    };
+  }
+
+  resetForm = (event) => {
+    event.preventDefault();
+  }
+
+  saveName = (event) => {
+    this.setState({ name: event.target.value });
+    const value = event.target.value.length;
+    const nomeM = 3;
+    if (value >= nomeM) {
+      this.setState({ button: false });
+    } else {
+      this.setState({ button: true });
+    }
+  }
+
+  submitCreateUser = async () => {
+    this.setState({ loading: true });
+    const { name } = this.state;
+    await createUser({ name });
+    this.setState({ carregado: true });
+  }
+
   render() {
+    const { button, loading, carregado } = this.state;
     return (
-      <div data-testid="page-login" />
+      <div>
+        { carregado && <Redirect to="/search" /> }
+        { loading && <Loading /> }
+        { !loading && (
+          <form onSubmit={ this.resetForm } data-testid="page-login">
+            Nome
+            <label htmlFor="name">
+              <input
+                id="name"
+                type="Text"
+                onChange={ this.saveName }
+                data-testid="login-name-input"
+              />
+            </label>
+            <br />
+            <button
+              disabled={ button }
+              type="submit"
+              data-testid="login-submit-button"
+              onClick={ this.submitCreateUser }
+            >
+              Entrar
+            </button>
+          </form>
+        )}
+      </div>
     );
   }
 }
