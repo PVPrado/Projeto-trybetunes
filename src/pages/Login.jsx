@@ -22,12 +22,8 @@ class Login extends React.Component {
   saveName = (event) => {
     this.setState({ name: event.target.value });
     const value = event.target.value.length;
-    const nomeM = 3;
-    if (value >= nomeM) {
-      this.setState({ button: false });
-    } else {
-      this.setState({ button: true });
-    }
+    const number = 3;
+    this.setState({ button: value < number });
   }
 
   submitCreateUser = async () => {
