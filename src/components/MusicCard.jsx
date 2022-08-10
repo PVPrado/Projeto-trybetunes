@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { addSong } from '../services/favoriteSongsAPI';
 import Loading from '../pages/Loading';
-import getMusics from '../services/musicsAPI';
 
 class MusicCard extends Component {
   constructor() {
@@ -13,26 +12,21 @@ class MusicCard extends Component {
     };
   }
 
+  componentDidMount() {
+    const { music, favoritado } = this.props;
+    this.setState({
+      checked: favoritado.some((musica) => musica.trackId === music.trackId),
+    });
+  }
+
   favoring = async (event) => {
     event.preventDefault();
-    const { id, checked } = event.target;
-    this.setState({
-      loading: true,
-    });
-    const song = await getMusics(id);
-    await addSong(song[0]);
-    if (checked) {
-      this.setState({
-        checked: true,
-        loading: false,
-      });
-    }
-    if (!checked) {
-      this.setState({
-        checked: false,
-        loading: false,
-      });
-    }
+    const { checked } = event.target;
+    const { music } = this.props;
+    this.setState({ loading: true, checked });
+    if (checked) await addSong(musica);
+    else await removeSong(music);
+    this.setState({ loading: false });
   };
 
   render() {
@@ -70,4 +64,8 @@ MusicCard.propTypes = {
   trackName: PropTypes.string.isRequired,
   previewUrl: PropTypes.string.isRequired,
   trackId: PropTypes.number.isRequired,
+  music: PropTypes.shape({
+    trackId: PropTypes.number.isRequired,
+  }).isRequired,
+  favoritado: PropTypes.arrayOf(PropTypes.shape({ })).isRequired,
 };
