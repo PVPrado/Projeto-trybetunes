@@ -24,7 +24,7 @@ class MusicCard extends Component {
     const { checked } = event.target;
     const { music } = this.props;
     this.setState({ loading: true, checked });
-    if (checked) await addSong(musica);
+    if (checked) await addSong(music);
     else await removeSong(music);
     this.setState({ loading: false });
   };
