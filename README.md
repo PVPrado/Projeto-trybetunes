@@ -6,7 +6,7 @@
 
 ### TrybeTunes é um aplicativo web inspirado no iTunes, projetado para proporcionar aos usuários uma experiência de descoberta musical emocionante. Utilizando a API de música do iTunes, o TrybeTunes permite aos usuários explorar uma biblioteca de músicas, artistas e álbuns.
 
-# 🔨 Tecnologias
+# 🔨 Tecnologias e ferramentas 
 
 - ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 
