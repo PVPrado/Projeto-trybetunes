@@ -15,3 +15,8 @@
 - ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
 
 - ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
+
+# 📱 Contato
+
+* Para suporte, mande um email para paulo.v.prado@hotmail.com
+* Link para o seu linkedin [Meu linkedin](https://www.linkedin.com/in/paulo-victor-de-souza-prado/)
