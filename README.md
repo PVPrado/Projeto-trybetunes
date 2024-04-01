@@ -1,10 +1,13 @@
-# :construction: README em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto.
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+# 🎶 Projeto Trybetunes
+
+### TrybeTunes: Sua trilha sonora personalizada - inspirada no iTunes!
+
+# 🔥 Visão geral
+
+### TrybeTunes é um aplicativo web inspirado no iTunes, projetado para proporcionar aos usuários uma experiência de descoberta musical emocionante. Utilizando a API de música do iTunes, o TrybeTunes permite aos usuários explorar uma biblioteca de músicas, artistas e álbuns.
+
+# 🔨 Tecnologias
+
+### ReactJS: Framework JavaScript utilizado para o desenvolvimento da interface do usuário dinâmica e responsiva.
+### API do iTunes: Fonte de dados para pesquisa e reprodução de músicas.
+### HTML/CSS: Para estruturação e estilização do aplicativo.
